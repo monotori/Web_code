@@ -16,4 +16,10 @@
   		/WEB-INF/classes/log4j.properties
   	</param-value>
   </context-param>
+  <resource-ref>
+  	<description>Connection</description>
+  	<res-ref-name>jdbc/dbPool</res-ref-name>
+  	<res-type>javax.spl.DataSource</res-type>
+  	<res-auth>Container</res-auth>
+  </resource-ref>
 </web-app>
