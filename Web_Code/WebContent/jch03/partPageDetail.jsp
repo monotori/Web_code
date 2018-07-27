@@ -12,11 +12,12 @@
 		= new ArrayList<Map<String,Object>>();
 	Map<String,Object> detailMap
 		= new HashMap<String,Object>();
-	
-	detailMap.put("../img/picture1_classyFake.jpg","아주 멋진 가짜 설명");
-	detailMap.put("../img/picture2_programLogic.jpg","프로그램 순서도 작성법 설명");
-	detailMap.put("../img/picture3_completeStudy.jpg","완벽한 공부법 설명");
-	detailMap.put("../img/picture4_snoop.jpg","스눕 설명");
+		
+	detailMap.put("img/img1.png","레고를 밟았다.");
+	detailMap.put("img/img2.png","아내와 나의 대한 태도가 명백하게 다르다");
+	detailMap.put("img/img3.png","\"말했거든요~?\"     \"못들었거든요~?\".");
+	detailMap.put("img/img4.png","아, 잠깐 기다려봐, 잔돈 있을지도 몰라");
+	detailMap.put("img/img5.png","아침일찍부터 짖길래 \"시끄러!\"라고 혼냈더니 그 때부터 매너모드");
 	picList.add(detailMap);
 	//Iterator<Map<String,Object>> it = picList.iterator();
 	Object keys[] = picList.get(0).keySet().toArray();
@@ -32,7 +33,7 @@
 <table width="350px" height="300px" border="1" borderColor="red">
 	<tr>
 		<td colspan="2" width="300px" height="240px" align="center">
-			<img src="./<%=imgName%>" width="300px" height="450px"></td>
+			<img src="../../<%=imgName%>" width="300px" height="450px"></td>
 	</tr>
 	<tr>
 		<td width="300px" height="60px"><%=picDetail%></td>
