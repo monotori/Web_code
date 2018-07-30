@@ -5,4 +5,5 @@
 	<script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
 	<link rel="stylesheet" href="./bootstrap-3.3.2/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="./bootstrap-3.3.2/dist/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="./css/Normalize.css">
 	<script src="./bootstrap-3.3.2/dist/js/bootstrap.min.js"></script>
