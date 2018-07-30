@@ -20,8 +20,7 @@
 		position:absolute;
 	}
 </style>
-
-<jsp:include page="../includelist/initJQ_EU_H.jsp"></jsp:include>
+<jsp:include page="../includelist/initJQ_EU_Book.jsp"></jsp:include>
 <script type="text/javascript">
 	function clearMethod(){
 		$("#d_word").css("backgroundColor","#FFFFFF");
@@ -37,10 +36,9 @@
 			var imgObj = $("#word")
 			var param = "keyword="+$("#word").val();
 			$.ajax({
-				method:"post",//전송방식 get|post
-				url:"searchWordAction.jsp", //dB연동
-			    data:param,//값을 넘길때 - DB연동코드로 
-			    success:function(result){
+				method:"get",//전송방식 get|post
+				url:"/InLis/blist.do?"+param, //dB연동
+			    success:function(result){ 
 					//alert(result);
 			    	//위치잡아주기(div) - css(), attr()
 			    	//div출력 - text(), html()
@@ -54,7 +52,6 @@
 						tds[i].onmouseover = function(){
 							this.className = "listIn";
 							var s = this.title;
-							s++;
 							$.ajax({
 								 method:"POST"
 								,url:"partPageDetail.jsp?picture=img/img"+s+".png"
@@ -77,7 +74,7 @@
 						}
 					}
 			    	//alert(tds.length);
-			    },
+			     },
 			    error:function(xhrObject){//XMLHttpRequest - (비동기)통신객체-변수(속성),함수
 			    	alert(xhrObject.responseText);//xhrObject.responseXML
 			    }/////////////통신결과 에러(404,500)

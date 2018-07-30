@@ -3,10 +3,10 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="BlogMapper">
-		<select id="myBatisTest" resultType="java.util.Map" parameterType="java.util.Map">	<!-- resultType = 반환타입  parameterType = 인입타입-->
-		 select * from emp where empno = #{empno}
-	</select>
-		<select id="myBooks" resultType="java.util.Map" parameterType="java.util.Map">
-		 select TO_CHAR(sysdate,'YYYY-MM-DD') as "curday" from dual
+	<insert id="bookinsert" parameterType="java.util.Map">
+		<![CDATA[INSERT INTO BOOKLIST(BOOKNO,BOOKNM,IMG,BOOKTS) VALUES (SEQ_JDBC_BOARD_NO.nextval,#{ti},'img'||SEQ_JDBC_BOARD_NO.currval||'.png',#{mo})]]>
+	</insert>
+	<select id="booklist" parameterType="Map" resultType="java.util.Map">
+	<![CDATA[select BOOKNO,BOOKNM,BOOKTS from BOOKLIST where BOOKNM LIKE #{key}||'%']]>
 	</select>
 </mapper>

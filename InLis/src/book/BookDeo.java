@@ -17,7 +17,7 @@ public class BookDeo {
 	String resource = "book/MapperConfig.xml";
 	SqlSessionFactory 	sqlMapper 	= null;
 	SqlSession			sqlSes 		= null;
-	
+	int resert = 0;
 	
 	public List<Map<String,Object>> getBookList(Map<String,Object> pMap) {
 		List<Map<String,Object>> bookList = null;
@@ -28,11 +28,7 @@ public class BookDeo {
 	         logger.info("getBookList 호출 성공");
 	         sqlSes = sqlMapper.openSession();
 	         reader.close();
-	         pMap = new HashMap<String,Object>();
-	         pMap.put("empno", 7499);
-	         bookList  = sqlSes.selectList("BlogMapper.myBatisTest");
-	         logger.info("조회결과"+bookList .get(0));
-	         
+	         bookList  = sqlSes.selectList("BlogMapper.booklist",pMap);	       
 	      } catch (Exception e) {
 	         e.printStackTrace();
 	      }
@@ -54,9 +50,22 @@ public class BookDeo {
 	
 	
 	public int bookInsert(Map<String,Object> pMap) {
-		logger.info("bookInsert 호출 성공");
-		int result = 0;
-		return result;
+		List<Map<String,Object>> bookList = null;
+		try {
+			Reader reader = null;
+			reader = Resources.getResourceAsReader(resource);
+			logger.info("getBookList 호출 성공");
+			sqlMapper =  new SqlSessionFactoryBuilder().build(reader);
+			sqlSes = sqlMapper.openSession();
+			reader.close();
+			logger.info("getBookList 호출 성공1");
+			resert  = sqlSes.update("BlogMapper.bookinsert",pMap);
+			sqlSes.commit();
+			logger.info("resert :"+ resert);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return resert;
 	}
 	
 	
