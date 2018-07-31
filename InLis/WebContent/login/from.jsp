@@ -21,7 +21,7 @@
 								type="text" class="form-control" placeholder="아이디를 입력하시오"
 								aria-describedby="sizing-addon3" id="login" name="login">
 						</div>
-						<div class="input-group input-group-sm">
+						<div class="input-group input-group-sm">	
 							<span class="input-group-addon" id="sizing-addon3">비밀번호</span> <input
 								type="password" class="form-control" placeholder="비밀번호를 입력하시오"
 								aria-describedby="sizing-addon3" id="pass" name="pass">
