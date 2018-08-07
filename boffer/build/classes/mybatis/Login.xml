@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="loginlist">
+	<select id="userlogin" resultType="java.util.Map" parameterType="java.util.Map">
+		 <![CDATA[select MEM_NO from member]]>
+		 <if test="#{id}!=null">
+		 <![CDATA[ where mem_id = #{id} ]]>
+		 </if>
+		 <if test="#{pass}!=null">
+		  <![CDATA[and mem_pw = #{pass}]]>
+		 </if>
+	</select>
+</mapper>

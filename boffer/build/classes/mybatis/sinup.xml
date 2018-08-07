@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="insertuser">
+	<insert id="inituser" parameterType="java.util.Map">
+		<![CDATA[INSERT INTO MEMBER(MEM_NO,MEM_NAME,MEM_ID,MEM_PW) VALUES(SEQ_USERIN.nextval,#{usernm},#{userid},#{userps})]]>
+	</insert>
+</mapper>
